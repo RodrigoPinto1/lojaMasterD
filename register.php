@@ -18,7 +18,12 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+$password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password_hash')";
 $result = mysqli_query($conn, $sql);
 
 header('Location: index.php');
+
+//var_dump($password_hash);
+//var_dump($password);
