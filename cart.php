@@ -14,15 +14,15 @@ if ($conn->connect_error) {
 }
 */
 
-$nameProduct = isset($_POST['nameProduct']) ? $_POST['nameProduct'] : '';
-$descriptionProduct = isset($_POST['descriptionProduct']) ? $_POST['descriptionProduct'] : '';
-$priceProduct = isset($_POST['priceProduct']) ? $_POST['priceProduct'] : '';
-$imgProduct = isset($_POST['imgProduct']) ? $_POST['imgProduct'] : '';
+$nameProduct = isset($_POST['name']) ? $_POST['name'] : '';
+$description = isset($_POST['description']) ? $_POST['description'] : '';
+$price = isset($_POST['price']) ? $_POST['price'] : '';
+$stock = isset($_POST['stock']) ? $_POST['stock'] : '';
 
-$_SESSION['nameProduct'] = $nameProduct;
-$_SESSION['descriptionProduct'] = $descriptionProduct;
-$_SESSION['priceProduct'] = $priceProduct;
-$_SESSION['imgProduct'] = $imgProduct;
+$_SESSION['name'] = $nameProduct;
+$_SESSION['description'] = $description;
+$_SESSION['price'] = $price;
+$_SESSION['stock'] = $stock;
 
-$sql = "SELECT * FROM products WHERE nameProduct = '$nameProduct' AND descriptionProduct = '$descriptionProduct' AND priceProduct = '$priceProduct' AND imgProduct = '$imgProduct'";
+$sql = "SELECT * FROM products WHERE name = '$nameProduct' AND description = '$description' AND price = '$price' AND stock = '$stock'";
 $result = mysqli_query($conn, $sql);

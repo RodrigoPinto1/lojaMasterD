@@ -14,11 +14,11 @@ if (!$conn) {
 }
 */
 
-$name = $_POST['name'];
+$username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 $result = mysqli_query($conn, $sql);
 
 header('Location: index.php');

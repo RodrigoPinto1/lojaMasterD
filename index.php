@@ -12,8 +12,8 @@
     <div class="login-main">
         <img id="imgLogin" src="img/loginIMG.png" alt="Something Wrong">
         <form action="login.php" method="POST">
-            <label for="name">Nome:</label>
-            <input type="text" name="name" id="name" required placeholder="Jhon Doe">
+            <label for="username">Nome:</label>
+            <input type="text" name="username" id="username" required placeholder="Jhon Doe">
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" required placeholder="Password">
             <button type="submit">Entrar</button>

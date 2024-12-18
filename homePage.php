@@ -29,70 +29,22 @@
             <h2 class="title">Produtos em Destaque</h2>
             <button id="showCart"><a href="cartPage.php" id="linkCart">Mostrar carrinho <i class="fa-solid fa-cart-shopping"></i></a></button>
         </div>
+
+        <?php include('home.php') ?>
         <section id="destaques">
-            <div class="produto">
-                <img src="img/produto1.jpg" alt="Something Wrong!">
-                <h3>Produto 1</h3>
-                <p>Descrição do Produto 1</p>
-                <p>Preço: €10.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto2.jpg" alt="Something Wrong!">
-                <h3>Produto 2</h3>
-                <p>Descrição do Produto 2</p>
-                <p>Preço: €20.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto3.jpg" alt="Something Wrong!">
-                <h3>Produto 3</h3>
-                <p>Descrição do Produto 3</p>
-                <p>Preço: €30.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto4.jpg" alt="Something Wrong!">
-                <h3>Produto 4</h3>
-                <p>Descrição do Produto 4</p>
-                <p>Preço: €10.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto5.jpg" alt="Something Wrong!">
-                <h3>Produto 5</h3>
-                <p>Descrição do Produto 5</p>
-                <p>Preço: €20.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto6.jpg" alt="Something Wrong!">
-                <h3>Produto 6</h3>
-                <p>Descrição do Produto 6</p>
-                <p>Preço: €30.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto7.jpg" alt="Something Wrong!">
-                <h3>Produto 7</h3>
-                <p>Descrição do Produto 7</p>
-                <p>Preço: €10.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto8.jpg" alt="Something Wrong!">
-                <h3>Produto 8</h3>
-                <p>Descrição do Produto 8</p>
-                <p>Preço: €20.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            <div class="produto">
-                <img src="img/produto9.jpg" alt="Something Wrong!">
-                <h3>Produto 9</h3>
-                <p>Descrição do Produto 9</p>
-                <p>Preço: €30.00</p>
-                <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
+            <?php if (empty($products)): ?>
+                <p>Não há produtos em destaque.</p>
+            <?php else: ?>
+                <?php foreach ($products as $product): ?>
+                    <div class="produto">
+                        <img src="<?php echo htmlspecialchars($product['imgProduct']); ?>" alt="<?php echo htmlspecialchars($product['nameProduct']); ?>">
+                        <h3><?php echo htmlspecialchars($product['nameProduct']); ?></h3>
+                        <p><?php echo htmlspecialchars($product['descriptionProduct']); ?></p>
+                        <p>Preço: <?php echo number_format($product['priceProduct'], 2, '.'); ?> €</p>
+                        <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </section>
     </main>
 

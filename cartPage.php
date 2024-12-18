@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cart.css">
+    <script src="https://kit.fontawesome.com/85191b6578.js" crossorigin="anonymous"></script>
+
     <title>Carrinho de Compras</title>
 </head>
 
@@ -42,12 +44,11 @@
                     <tbody>
                         <?php foreach ($cartItems as $item): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($item['imgProduct']); ?></td>
-                                <td><?php echo htmlspecialchars($item['nameProduct']); ?></td>
-                                <td><?php echo htmlspecialchars($item['descriptionProduct']); ?></td>
-                                <td><?php echo number_format($item['priceProduct'], 2); ?>€</td>
-                                <td><?php echo htmlspecialchars($item['quantity']); ?></td>
-                                <td><?php echo number_format($item['price'] * $item['quantity'], 2); ?>€</td>
+
+                                <td><?php echo htmlspecialchars($item['name']); ?></td>
+                                <td><?php echo htmlspecialchars($item['description']); ?></td>
+                                <td><?php echo number_format($item['price'], 2); ?>€</td>
+                                <td><?php echo htmlspecialchars($item['stock']); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
