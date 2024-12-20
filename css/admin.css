@@ -1,0 +1,153 @@
+/* Reset de margin e padding para body e html */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Aplica box-sizing: border-box para todos os elementos */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #2b06ff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-right-from-bracket:hover {
+    color: rgb(138, 138, 138);
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    flex: 1;
+    margin-right: -20px;
+    text-align: center;
+}
+
+#destaques {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.produto, .addProduct {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.addCart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+}
+
+.addCart:hover {
+    background-color: #0056b3;
+}
+
+#addProductBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 290px;
+    height: 160px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para a cor de fundo e transformação */
+}
+
+#addProductBtn:hover {
+    background-color: #007bff; /* Cor de fundo mais escura ao passar o mouse */
+    box-shadow: #007bff 0px 0px 10px; /* Sombra ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
+}
+
+.addProduct {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: #2b06ff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

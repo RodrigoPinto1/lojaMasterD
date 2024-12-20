@@ -37,10 +37,10 @@
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
                     <div class="produto">
-                        <img src="<?php echo htmlspecialchars($product['imgProduct']); ?>" alt="<?php echo htmlspecialchars($product['nameProduct']); ?>">
-                        <h3><?php echo htmlspecialchars($product['nameProduct']); ?></h3>
-                        <p><?php echo htmlspecialchars($product['descriptionProduct']); ?></p>
-                        <p>Preço: <?php echo number_format($product['priceProduct'], 2, '.'); ?> €</p>
+                        <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                        <p><?php echo htmlspecialchars($product['description']); ?></p>
+                        <p>Preço: <?php echo number_format($product['price'], 2, '.'); ?> €</p>
+                        <p><?php echo htmlspecialchars($product['stock']); ?></p>
                         <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
                     </div>
                 <?php endforeach; ?>
