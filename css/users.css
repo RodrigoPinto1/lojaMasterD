@@ -105,10 +105,6 @@ main {
     cursor: pointer;
 }
 
-.fa-right-from-bracket:hover {
-    color: rgb(138, 138, 138);
-}
-
 .btn-submit {
     background-color: #28a745;
     color: #fff;
@@ -158,6 +154,11 @@ table td {
     transition: background-color 0.3s, transform 0.3s;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .btn-edit:hover {
     background-color: #0056b3;
     transform: scale(1.05);
@@ -180,4 +181,76 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Estilos para o fundo do modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Esconde o modal inicialmente */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para o conteúdo do modal */
+.modal {
+    position: relative; /* Necessário para posicionar a cruz */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/* Estilos para os campos do formulário */
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal input[type="text"],
+.modal input[type="email"],
+.modal select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Botão de envio */
+.modal button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #0056b3;
+}
+
+/* Cruz de fechar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
 }

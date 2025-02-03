@@ -11,6 +11,7 @@ if (!$conn) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
 
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
@@ -28,3 +29,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
+
+// Gera o arquivo JSON com os dados dos usuários
+file_put_contents('response.json', json_encode($users, JSON_PRETTY_PRINT));
+
+//echo "Arquivo JSON gerado com sucesso!";

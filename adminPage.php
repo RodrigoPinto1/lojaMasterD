@@ -30,7 +30,7 @@
         </div>
 
         <?php include('adminHome.php') ?>
-        <section id="destaques">
+        <section id="products">
             <?php if (empty($products)): ?>
                 <p>Não há produtos em destaque.</p>
             <?php else: ?>

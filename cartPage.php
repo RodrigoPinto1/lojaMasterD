@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cart.css">
     <script src="https://kit.fontawesome.com/85191b6578.js" crossorigin="anonymous"></script>
-
     <title>Carrinho de Compras</title>
 </head>
 
@@ -27,8 +30,7 @@
     <main>
         <section id="cart">
             <h2>Itens no Carrinho</h2>
-            <?php include('cart.php') ?>
-            <?php if (empty($cartItems)): ?>
+            <?php if (empty($_SESSION['cart'])): ?>
                 <p>Seu carrinho está vazio.</p>
             <?php else: ?>
                 <table>
@@ -42,25 +44,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($cartItems as $item): ?>
+                        <?php foreach ($_SESSION['cart'] as $item): ?>
                             <tr>
-
                                 <td><?php echo htmlspecialchars($item['name']); ?></td>
                                 <td><?php echo htmlspecialchars($item['description']); ?></td>
-                                <td><?php echo number_format($item['price'], 2); ?>€</td>
-                                <td><?php echo htmlspecialchars($item['stock']); ?></td>
+                                <td><?php echo number_format($item['price'], 2, '.'); ?> €</td>
+                                <td><?php echo htmlspecialchars($item['quantity']); ?></td>
+                                <td><?php echo number_format($item['price'] * $item['quantity'], 2, '.'); ?> €</td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <p><strong>Total: €<?php echo number_format($total, 2); ?></strong></p>
-                <button id="checkout">Finalizar Compra</button>
             <?php endif; ?>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Loja Online. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Loja Online. Todos os direitos reservados.</p>
     </footer>
 </body>
 

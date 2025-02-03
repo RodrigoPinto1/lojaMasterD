@@ -1,0 +1,37 @@
+[
+    {
+        "id": "12",
+        "username": "Rodrigo",
+        "email": "rodrigopintodev@gmail.com",
+        "password": "$2y$10$UxHS6drabM\/AHNyN5kgg3ueU3gwtoDDVNwYb4H0aklu0UO9gY2k7i",
+        "role": "admin"
+    },
+    {
+        "id": "13",
+        "username": "user",
+        "email": "user1@gmail.com",
+        "password": "$2y$10$yhRKMPQLI6OSXjP5VlTF4.986YS8fUUtWAnW\/q72Wsz85uJqz0ZDi",
+        "role": "user"
+    },
+    {
+        "id": "14",
+        "username": "test",
+        "email": "test@gmail.com",
+        "password": "$2y$10$rr30alsi7S6XXnTicxj5lOtIrhfGGWQk1r.6Sy5Ub1CmEYIPF\/fzG",
+        "role": "user"
+    },
+    {
+        "id": "17",
+        "username": "Gui",
+        "email": "gui@gmail.com",
+        "password": "$2y$10$vVJlQzCyDZoef.qvbzhp8uyzVN57y8SmSEu4mZEGk4cDKuPTRiVm.",
+        "role": "admin"
+    },
+    {
+        "id": "18",
+        "username": "guiuser",
+        "email": "guiuser@gmail.com",
+        "password": "$2y$10$Pp0hFga1r3lSTpRk6W8j\/epn6oHuTlneXGp\/JRqjBQKIEg.T5U2nu",
+        "role": "user"
+    }
+]

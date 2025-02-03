@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +42,7 @@
         </div>
 
         <?php include('home.php') ?>
-        <section id="destaques">
+        <section id="products">
             <?php if (empty($products)): ?>
                 <p>Não há produtos em destaque.</p>
             <?php else: ?>
@@ -41,7 +52,7 @@
                         <p><?php echo htmlspecialchars($product['description']); ?></p>
                         <p>Preço: <?php echo number_format($product['price'], 2, '.'); ?> €</p>
                         <p><?php echo htmlspecialchars($product['stock']); ?></p>
-                        <button class="addCart">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="addCart" data-id="<?php echo $product['id']; ?>">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
@@ -51,6 +62,8 @@
     <footer>
         <p>&copy; 2024 Loja Online. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

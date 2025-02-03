@@ -83,7 +83,7 @@ main {
     padding: 20px;
 }
 
-#destaques {
+#products {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
